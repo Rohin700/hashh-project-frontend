@@ -33,11 +33,10 @@ export default function ContactForm() {
     let response = await axios.post(url, fd, {
       headers: {
         'Content-Type': 'multipart/form-data',
-        'authorization': `Bearer ${token}`
       }
     });
 
-    if (response.data.msg) {
+    if (response.data.status) {
       setIsSubmitted(true);
     }
 
