@@ -28,7 +28,7 @@ export default function ContactForm() {
   }
 
   try {
-    let url = "http://localhost:2004/mailsend/domailing";
+    let url = "https://green-garden-unzh.onrender.com";
 
     let response = await axios.post(url, fd, {
       headers: {
