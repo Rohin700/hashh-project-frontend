@@ -31,9 +31,10 @@ export default function ContactForm() {
   try {
     let url = "https://green-garden-unzh.onrender.com" + "/mailsend/domailing";
 
-    const response = await axios.post(url, formData);
+    let fd = new formData();
+    let response = await axios.post(url, fd, {headers: { 'Content-Type': 'multipart/form-data' }});
 
-    if (response.data.status) {
+      if (response.data.status) {
       setIsSubmitted(true);
     }
 
